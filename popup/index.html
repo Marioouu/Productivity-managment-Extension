@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    #C {
+      display: none;
+    }
+
+    #B {
+      display: none;
+
+    }
+    #D{
+      display:none;
+    }
+    #A{
+      display:none;
+    }
+    #E{
+      display:none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="col-md-6">
+    <!--SELECT MODE BUTTONS-->
+    <div class="h-100 p-5 text-white bg-dark rounded-3" style="width: 285px;">
+      <h1 style="text-align: center;color: rgba(255, 217, 0, 0.932);"><b>SELECT<span style="background-color: rgba(255, 217, 0, 0.932) ;color: black;">MODE</span></b></h1>
+      <button id="bA" title="A basic Countdown Timer with Pause and Resume" class="btn btn-outline-light" style="color: rgba(255, 217, 0, 0.932);width: 70px;border: 0px solid rgba(0, 0, 0, 0) ;margin-left: 15px;"><b>TIMER</b></button><span><button id="bB" class="btn btn-outline-light" style="color: rgba(255, 217, 0, 0.932);border: 0px solid rgb(0, 0, 0) ;" title="Block Specific URL's"><b>X-URLS</b></button></span><span><button id="bC" class="btn btn-outline-light" style="color: rgba(255, 217, 0, 0.932);border: 0px solid rgb(0, 0, 0) ;margin-left: 15px;" title="A To-Do list to manage Tasks"><b>TODO</b></button></span><span><button id="bD" class="btn btn-outline-light" style="color: rgba(255, 217, 0, 0.932);border: 0px solid rgb(0, 0, 0) ;" title="Focus mode with Breaks and Locks Browser during Breaks"><b>FOCUS</b></button></span><span><button id="bE" title="A basic Countdown Timer with Pause and Resume" class="btn btn-outline-light" style="color: rgba(255, 217, 0, 0.932);width: 70px;border: 0px solid rgba(0, 0, 0, 0) ;margin-left: 15px;"><b>ALARM</b></button></span>
+    </div>
+
+    <!--TIMER-->
+    <div class="h-100 p-5 text-white bg-dark rounded-3" id="A">
+      <h1 style="text-align: center;color: rgba(255, 217, 0, 0.932);"><b>T I <span style="background-color: rgba(255, 217, 0, 0.932) ;color: black;">M E R</span></b></h1><span>
+        <h1 id="countdown" style="text-align: center; border:5px solid white; border-radius: 5px;">00:00</h1>
+      </span>
+    
+      <input type="text" class="form-label" id="inputfield" placeholder="Enter Time in Minutes">
+    
+    
+    
+    
+      <button class="btn btn-warning" type="button" id="button" style="padding: 3px 28px;">start</button><span><button
+          class="btn btn-warning" type="button" id="reset"
+          style="padding: 3px 26px;margin-left: 2px;">Reset</button></span><span><button class="btn btn-outline-light"
+          type="button" id="pause"
+          style="padding: 3px 24px;color: rgba(255, 217, 0, 0.932);margin-top: 3px;">Pause</button></span><span><button
+          class="btn btn-outline-light" type="button" id="resume"
+          style="padding: 3px 17px;color: rgba(255, 217, 0, 0.932);margin-top: 3px;">Resume</button></span>
+    </div>
+
+    <!--blocklist-->
+    <div class="h-100 p-5 text-white bg-dark rounded-3" id="B" style="width:283px">
+      <h1 style="text-align: center;margin-top: 15px;color: rgba(255, 217, 0, 0.932);"><b>BLOCK<span style="background-color: rgba(255, 217, 0, 0.932) ;color: black;">URL'S</span></b> </h1>
+      <input type="text" id="inputurl" style=" margin-left: 2px;margin-top: 5px;" placeholder="example.com"><br>
+      <div style="margin-bottom: 5px;"><button id="urlblock" class="btn btn-warning"
+          style="padding: 3px 8px;width:80px;margin-left: 6px;margin-top: 5px;">BLOCK</button><span><button id="Unurlblock"
+            class="btn btn-outline-light" style="padding: 3px 8px;width:80px;margin-left: 5px;margin-top: 5px;color: rgba(255, 217, 0, 0.932)">UnBLOCK</button></span>
+      </div>
+    </div>
+
+    <!--To-do list-->
+    <div class="h-100 p-5 text-white bg-dark rounded-3" id="C">
+      <h1 style="text-align: center;color: rgba(255, 217, 0, 0.932);"><b>T 0 -<span style="background-color: rgba(255, 217, 0, 0.932) ;color: black;">D 0'S</span></b></h1>
+      <div style="margin-bottom: 10px;">
+        <input type="text" id="inputToDo" class="form-label" placeholder="Enter Tasks To Do">
+        <Button id="inputToDoBtn" class="btn btn-warning" style="width: 85px;" type="button">ADD</Button><span><Button
+            id="removeToDo" class="btn btn-outline-light" type="button" style="margin-left: 5px;color: rgba(255, 217, 0, 0.932)">REMOVE</Button></span>
+
+      </div>
+
+      <div id="displaylist" style="color: rgb(255, 255, 255);">
+
+
+      </div>
+    </div>
+
+    <!--FOCUS TIMER-->
+
+    <div class="h-100 p-5 text-white bg-dark rounded-3" id="D">
+      <h1 style="text-align: center;color: rgba(255, 217, 0, 0.932);"><b>FOCUS<span style="background-color: rgba(255, 217, 0, 0.932) ;color: black;">TIMER</span></b></h1>      
+      <h1 id="focuscount" style="text-align: center; border:5px solid white; border-radius: 5px;">00:00</h1>
+      <input placeholder="focus time" id="focusTime" class="form-label"></input>
+      <input placeholder="break time" id="breakTime" class="form-label"></input>
+      <input placeholder="focus cycles" id="focusCycles" class="form-label"></input>
+      <button id="Addfocus" class="btn btn-warning" style="width: 85px;" type="button">START</button><span><button id="clearStorage" class="btn btn-outline-light" type="button" style="margin-left: 5px;color: rgba(255, 217, 0, 0.932);width: 85px;">STOP</button></span>
+    </div>
+
+    <!--ALARM-->
+    <div  class="h-100 p-5 text-white bg-dark rounded-3" id="E">
+      <h1 style="text-align: center;color: rgba(255, 217, 0, 0.932);"><b>S E T<span style="background-color: rgba(255, 217, 0, 0.932) ;color: black;">ALARM</span></b></h1>
+      <input id="hours" style="width: 40px;"><span><b style="margin-left: 2px;margin-right: 2px;">:</b><input id="minutes" style="width:40px;"></input></span>
+      <button id="setalarm" class="btn btn-warning" style="width: 85px;" type="button">SET</button><div id="AlarmTime" style="text-align: center;"></div><button id="deletealarm" class="btn btn-outline-light" type="button" style="margin-left: 40px;color: rgba(255, 217, 0, 0.932);width: 85px;">Delete</button>
+      
+    </div>
+   
+
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+
+
+  <!--Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  <script src="sketch.js"></script>
+
+</body>
+
+</html>

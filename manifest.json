@@ -1,0 +1,33 @@
+{
+    "manifest_version":2,
+    "name":"MArio-Productivity-Ext",
+    "version":"1.0",
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+            "js":[
+                "content.js"
+            ]          
+
+            
+        }
+        
+    ],
+    "permissions":["tabs","webRequest","webRequestBlocking","<all_urls>"],
+
+    "background":{
+        "scripts":["background.js"]
+        
+        
+        
+    },
+    "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+    
+    "browser_action":{
+        "default_icon":"mario.PNG",
+        "default_popup":"popup/index.html",
+        "default_title":"Productivity Manager Extension"
+    }
+}
